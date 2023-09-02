@@ -1,20 +1,32 @@
+'use client';
+
 import { Container, Typography } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import ThreeScene from '@/components/ThreeScene/ThreeScene';
+import "@/styles/page.css"
 
 export default function Home() {
 
   return (
     <>
-        <Typography variant="h2" component="h2" align="left" color="secondary">
-          hi!
-        </Typography>
-        <Typography variant="h2" component="h2" align="left">
-          i&apos;m karan.
-        </Typography>
+        <Container maxWidth={false}>
 
-        <Typography variant="h6" component="h6" align="left">
-          software engineer, computer science student, and innovator.
-        </Typography>
+          <div className="threeContainer">
+            <ThreeScene/>
+          </div>
+          
+          <Container maxWidth="md" className='pageText'>
+            <Typography variant="h2" component="h2" align="left" color="secondary">
+              hi!
+            </Typography>
+            <Typography variant="h2" component="h2" align="left">
+              i&apos;m karan.
+            </Typography>
+
+            <Typography variant="h6" component="h6" align="left">
+              software engineer, computer science student, and innovator.
+            </Typography>
+          </Container>
+        </Container>
     </>
   )
 }

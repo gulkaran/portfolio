@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { DM_Sans, Dela_Gothic_One, Work_Sans } from 'next/font/google'
 import ThemeRegistry from "@/theme/ThemeRegistry";
 
+
 const dM_Sans = DM_Sans({
   weight: ["500"],
   subsets: ['latin']
@@ -31,12 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeRegistry>
-        <body className={dM_Sans.className}>
-          <nav>
-            <Navbar />
-          </nav> 
-          {children}
-        </body>
+          <body className={dM_Sans.className}>
+            <nav>
+              <Navbar />
+            </nav> 
+            {children}
+          </body>
       </ThemeRegistry>
     </html>
   )
