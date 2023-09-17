@@ -7,7 +7,7 @@ import { createBreakpoints } from "@mui/system";
 const breakpoints = createBreakpoints({});
 
 const dM_Sans = DM_Sans({
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ['latin']
 })
 
@@ -32,8 +32,8 @@ const themeOptions: ThemeOptions = {
       main: '#FFC700',
     },
     background: {
-      default: '#1E1E1E',
-      paper: '#1E1E1E',
+      default: '#151515',
+      paper: '#151515',
     },
     text: {
       secondary: '#8D8D8D',
@@ -45,16 +45,16 @@ const themeOptions: ThemeOptions = {
       fontSize: '140pt',
     },
     h2: {
-      fontFamily: work_Sans.style.fontFamily,
-      fontSize: '96pt',
-      fontWeight: 700,
+      fontFamily: dM_Sans.style.fontFamily,
+      fontSize: '64pt',
+      fontWeight: 600,
       [breakpoints.down("md")]: {
         fontSize: '64pt'
       }
     },
     h6: {
       fontFamily: dM_Sans.style.fontFamily,
-      fontSize: '18pt',
+      fontSize: '14pt',
       fontWeight: 500,
       [breakpoints.down("sm")]: {
         fontSize: '14pt'

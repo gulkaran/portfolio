@@ -1,21 +1,11 @@
 import { Navbar } from '@/components/navbar/navbar'
 import type { Metadata } from 'next'
-import { DM_Sans, Dela_Gothic_One, Work_Sans } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
 import ThemeRegistry from "@/theme/ThemeRegistry";
 
 
 const dM_Sans = DM_Sans({
   weight: ["500"],
-  subsets: ['latin']
-})
-
-const dela_Gothic_One = Dela_Gothic_One({
-  weight: ["400"],
-  subsets: ['latin']
-})
-
-const work_Sans = Work_Sans({
-  weight: ["700"],
   subsets: ['latin']
 })
 

@@ -13,26 +13,27 @@ const ThreeScene: React.FC = () => {
       const scene = new THREE.Scene();
       // scene.add(new THREE.AxesHelper(5))
 
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ alpha: true });
-      renderer.setSize(window.innerWidth, window.innerHeight-64);
+      const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
       containerRef.current?.appendChild(renderer.domElement);
       camera.position.set(100, 50, 200);
 
-      const ambientLight = new THREE.AmbientLight(0xffffff, 1)
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
       scene.add(ambientLight)
 
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 2)
       directionalLight.position.set(100, 50, 200)
       scene.add(directionalLight)
 
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.enableDamping = true
-
+      
+      let rotationSpeed = -2;
       controls.target.set(0, 0, 0)
       controls.enableZoom = false
       controls.autoRotate = true
-      controls.autoRotateSpeed = -2
+      controls.autoRotateSpeed = rotationSpeed
 
       let loadedModel: GLTF;
 
@@ -41,6 +42,7 @@ const ThreeScene: React.FC = () => {
         scene.add(gltf.scene)
 
         loadedModel = gltf
+        loadedModel.scene.applyMatrix4(new THREE.Matrix4().makeScale(-1, 1, 1))
         loadedModel.scene.rotateY(0.5)
         loadedModel.scene.translateX(150)
       })
@@ -75,10 +77,25 @@ const ThreeScene: React.FC = () => {
       const animate = () => {
         requestAnimationFrame(animate);
 
-        // if (loadedModel) {
-        //   loadedModel.scene.rotateY(-0.005)
-        // }
+        if (loadedModel) {
+          const currentRotationAngle = controls.getAzimuthalAngle();
 
+          // console.log(currentRotationAngle) 
+
+          // Adjust rotation speed based on the current angle
+          if (1.1 < currentRotationAngle && currentRotationAngle < 1.9) {
+            rotationSpeed = -0.5;
+          } else if (1.9 < currentRotationAngle && currentRotationAngle < Math.PI) {
+            rotationSpeed -= 0.5;
+          } else if (-Math.PI < currentRotationAngle && currentRotationAngle < -1) {
+              rotationSpeed = -40;
+          } else {
+            // Normal speed in the middle section
+            rotationSpeed = -20;
+          }
+        }
+        
+        controls.autoRotateSpeed = rotationSpeed;
         controls.update()
 
         renderer.render(scene, camera);
