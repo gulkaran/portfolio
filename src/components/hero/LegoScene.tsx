@@ -6,7 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 // import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-const ThreeScene: React.FC = () => {
+export const LegoScene: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -87,8 +87,8 @@ const ThreeScene: React.FC = () => {
             rotationSpeed = -0.5;
           } else if (1.9 < currentRotationAngle && currentRotationAngle < Math.PI) {
             rotationSpeed -= 0.5;
-          } else if (-Math.PI < currentRotationAngle && currentRotationAngle < -1) {
-              rotationSpeed = -40;
+          } else if (-1.5 < currentRotationAngle && currentRotationAngle < -1) {
+              rotationSpeed = -10;
           } else {
             // Normal speed in the middle section
             rotationSpeed = -20;
@@ -124,4 +124,3 @@ const ThreeScene: React.FC = () => {
   }, []);
   return <div ref={containerRef} />;
 };
-export default ThreeScene;

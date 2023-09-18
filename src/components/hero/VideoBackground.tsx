@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Typography } from '@mui/material';
+import { Container } from '@mui/material';
 
-const VideoBackground = () => {
+export const VideoBackground = () => {
 
   return (
     <Container maxWidth="xl" disableGutters>
@@ -12,5 +12,3 @@ const VideoBackground = () => {
     </Container>
   );
 };
-
-export default VideoBackground;

@@ -1,6 +1,7 @@
-
-.pageText {
-  pointer-events: none;   /* this element will not catch any events */
+body {
+  overflow-x: hidden;
+}
+.pageText {   /* this element will not catch any events */
   z-index: 1;    /* position this canvas at bottom of the other one */
 }
 

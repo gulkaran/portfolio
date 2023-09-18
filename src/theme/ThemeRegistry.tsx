@@ -49,15 +49,23 @@ const themeOptions: ThemeOptions = {
       fontSize: '64pt',
       fontWeight: 600,
       [breakpoints.down("md")]: {
-        fontSize: '64pt'
+        fontSize: '52pt'
+      }
+    },
+    h4: {
+      fontFamily: dM_Sans.style.fontFamily,
+      fontSize: '36pt',
+      fontWeight: 500,
+      [breakpoints.down("md")]: {
+        fontSize: '28pt'
       }
     },
     h6: {
       fontFamily: dM_Sans.style.fontFamily,
-      fontSize: '14pt',
-      fontWeight: 500,
-      [breakpoints.down("sm")]: {
-        fontSize: '14pt'
+      fontSize: '16pt',
+      fontWeight: 400,
+      [breakpoints.down("md")]: {
+        fontSize: '12pt'
       }
     },
     button: {
