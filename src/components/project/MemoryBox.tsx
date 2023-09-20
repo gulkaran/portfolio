@@ -1,6 +1,6 @@
 'use client';
 
-import { ProjectTile } from '@/components/project/ProjectTile';
+import { ProjectDetails } from '@/components/project/ProjectDetails';
 import { GridContainer } from '@/components/container/GridContainer';
 import { Container } from '@mui/material';
 import { motion } from "framer-motion";
@@ -17,7 +17,7 @@ export const MemoryBox = () => {
   }
 
   const text = (
-      <ProjectTile text={details} />
+      <ProjectDetails text={details} />
   )
 
   const image = (
@@ -27,7 +27,7 @@ export const MemoryBox = () => {
                 }}
                 whileTap={{scale: 1}} >
       <Container maxWidth="sm">
-        <Image width={img.width / 2.2 } height={img.height / 2.2} src={img} alt="Image" />
+        <Image width={ 438 } height={ 329 } src={img} alt="Image" />
       </Container>
     </motion.div>
   );

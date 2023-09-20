@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, Link } from "@mui/material";
 import { Divider } from '@mui/material';
 import { motion } from "framer-motion";
 
@@ -12,7 +12,7 @@ interface TextProp {
   };
 }
 
-export const ProjectTile: React.FC<TextProp> = ({ text }) => {
+export const ProjectDetails: React.FC<TextProp> = ({ text }) => {
   return (
     <>
       <Typography variant="h4" component="h4" align="left" color="secondary">
@@ -26,7 +26,7 @@ export const ProjectTile: React.FC<TextProp> = ({ text }) => {
         { text.description }
       </Typography>
 
-      <a href={ text.github } target="_blank" rel="noopener noreferrer">
+      <Link href={ text.github } underline="none" target="_blank" rel="noopener noreferrer">
         <Button variant="outlined" 
                 color="secondary"
                 component={motion.div}
@@ -36,7 +36,7 @@ export const ProjectTile: React.FC<TextProp> = ({ text }) => {
                 }}
                 whileTap={{scale: 0.9}}
                 sx={{mb: 5}}>view github</Button>
-      </a>
+      </Link>
     </>
   )
 }

@@ -1,11 +1,12 @@
 'use client';
 
-import { ProjectTile } from '@/components/project/ProjectTile';
+import { ProjectDetails } from '@/components/project/ProjectDetails';
 import { GridContainer } from '@/components/container/GridContainer';
 import { Container } from '@mui/material';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import img from '../../../public/images/handtex.png';
+import '@styles/project.css'
 
 export const HandTex = () => {
 
@@ -17,7 +18,7 @@ export const HandTex = () => {
   }
 
   const text = (
-      <ProjectTile text={details} />
+      <ProjectDetails text={details} />
   )
 
   const image = (
@@ -27,7 +28,7 @@ export const HandTex = () => {
                 }}
                 whileTap={{scale: 1}} >
       <Container maxWidth="sm">
-        <Image width={img.width / 1.3 } height={img.height} src={img} alt="Image" />
+        <Image className="centerImg" width={ 438 } height={ 329 } src={img} alt="Image" />
       </Container>
     </motion.div>
   );

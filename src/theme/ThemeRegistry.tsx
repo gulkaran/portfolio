@@ -42,7 +42,10 @@ const themeOptions: ThemeOptions = {
   typography: {
     h1: {
       fontFamily: dela_Gothic_One.style.fontFamily,
-      fontSize: '140pt',
+      fontSize: '100pt',
+      [breakpoints.down("md")]: {
+        fontSize: '56pt'
+      }
     },
     h2: {
       fontFamily: dM_Sans.style.fontFamily,
@@ -89,7 +92,7 @@ const themeOptions: ThemeOptions = {
     },
     MuiAppBar: {
       defaultProps: {
-        color: 'transparent',
+        color: "transparent",
       }
     },
   }
