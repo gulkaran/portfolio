@@ -6,7 +6,7 @@ export const HeroText = (
       hi!
     </Typography>
     <Typography variant="h2" component="h2" align="left">
-      i&apos;m karan.
+      i&apos;m gulkaran.
     </Typography>
     <Typography variant="h6" component="h6" align="left">
       software engineer, computer science student, and innovator.

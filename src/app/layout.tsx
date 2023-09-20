@@ -11,7 +11,7 @@ const dM_Sans = DM_Sans({
 
 export const metadata: Metadata = {
   title: 'Gulkaran Singh | Portfolio',
-  description: 'Hi! I\'m Gulkaran and this is my personal portfolio! Take a look at my projects, experiences, blog, and more!',
+  description: 'Hi! I\'m Gulkaran and this is my personal portfolio! Take a look at my projects, experiences, notes, and more!',
 }
 
 export default function RootLayout({
