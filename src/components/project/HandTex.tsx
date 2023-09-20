@@ -6,7 +6,7 @@ import { Container } from '@mui/material';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import img from '../../../public/images/handtex.png';
-import '@styles/project.css'
+import '@/styles/project.css'
 
 export const HandTex = () => {
 
