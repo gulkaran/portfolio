@@ -11,6 +11,7 @@ export default function Hero() {
 
   return (
     <>
+      <div id="/">
       <div className='video'>
         <VideoBackground />
       </div>
@@ -20,6 +21,7 @@ export default function Hero() {
       </div>
       
       <LeftAlignContainer component={HeroText} />
+      </div>
     </>
   )
 }

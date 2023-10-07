@@ -44,7 +44,10 @@ const themeOptions: ThemeOptions = {
       fontFamily: dela_Gothic_One.style.fontFamily,
       fontSize: '100pt',
       [breakpoints.down("md")]: {
-        fontSize: '56pt'
+        fontSize: '60pt'
+      },
+      [breakpoints.down("sm")]: {
+        fontSize: '46pt'
       }
     },
     h2: {
@@ -53,6 +56,9 @@ const themeOptions: ThemeOptions = {
       fontWeight: 600,
       [breakpoints.down("md")]: {
         fontSize: '52pt'
+      },
+      [breakpoints.down("sm")]: {
+        fontSize: '28pt'
       }
     },
     h4: {
@@ -63,9 +69,17 @@ const themeOptions: ThemeOptions = {
         fontSize: '28pt'
       }
     },
-    h6: {
+    h5: {
       fontFamily: dM_Sans.style.fontFamily,
       fontSize: '16pt',
+      fontWeight: 400,
+      [breakpoints.down("md")]: {
+        fontSize: '12pt'
+      }
+    },
+    h6: {
+      fontFamily: dM_Sans.style.fontFamily,
+      fontSize: '14pt',
       fontWeight: 400,
       [breakpoints.down("md")]: {
         fontSize: '12pt'

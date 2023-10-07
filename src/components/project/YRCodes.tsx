@@ -5,15 +5,16 @@ import { GridContainer } from '@/components/container/GridContainer';
 import { Container } from '@mui/material';
 import { motion } from "framer-motion";
 import Image from 'next/image';
-import img from '../../../public/images/memorybox.png';
+import img from '../../../public/images/yrcodes.png';
+import '@/styles/project.css'
 
-export const MemoryBox = () => {
+export const YRCodes = () => {
 
   const details = {
-    title: "MemoryBox",
-    techStack: "arduino, AutoCAD, Fusion360",
-    description: "a memory box to hold up to 8 prerecorded messages for one's birthday or anniversary!",
-    github: "https://github.com/gulkaran/MemoryBox"
+    title: "YRCodes",
+    techStack: "javascript, html5, css3, google prettify",
+    description: "launched an educational computer science learning platform for York Region (YRDSB) students; ultimately supported and endorsed by the YRDSB superintendent.",
+    github: "https://github.com/gulkaran/harishuthayakumargithub.github.io"
   }
 
   const text = (

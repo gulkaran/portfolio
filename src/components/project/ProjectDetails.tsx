@@ -18,11 +18,11 @@ export const ProjectDetails: React.FC<TextProp> = ({ text }) => {
       <Typography variant="h4" component="h4" align="left" color="secondary">
         { text.title }
       </Typography>
-      <Typography variant="h6" component="h6" align="left" sx={{pb: 1}}>
+      <Typography variant="h6" component="h6" align="left" sx={{pb: 2, pt: 1}}>
         { text.techStack }
       </Typography>
       <Divider sx={{mb:2}} />
-      <Typography variant="h6" component="h6" align="left" color="textSecondary" sx={{lineHeight: 1.2, pb: 2}}>
+      <Typography variant="h5" component="h5" align="left" color="textSecondary" sx={{lineHeight: 1.2, pb: 2}}>
         { text.description }
       </Typography>
 

@@ -1,7 +1,8 @@
 'use client';
 
 import Hero from "@/layouts/Hero";
-import Projects from "@/layouts/Project"
+import About from "@/layouts/About";
+import Projects from "@/layouts/Project";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <>
         <Hero />
+        <About />
         <Projects />
     </>
   )

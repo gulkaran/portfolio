@@ -29,7 +29,7 @@ export const GridContainer: React.FC<{ rightComponent: ReactNode,
               justifyContent="center"
               alignItems="center"
               sx={{ minHeight: '50vh'}}>
-            <Grid item md={12} lg={3}>
+            <Grid item md={12} lg={4} xs={9}>
               <Container maxWidth="sm">
                 <motion.div initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
@@ -44,7 +44,7 @@ export const GridContainer: React.FC<{ rightComponent: ReactNode,
               </Container>
             </Grid>
             
-            <Grid item md={12} lg={3}>
+            <Grid item md={12} lg={4} xs={9}>
               <Container maxWidth="sm">
                 <motion.div initial={{ scale: 0 }}
                             animate={{ scale: 1 }}

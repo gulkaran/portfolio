@@ -13,7 +13,7 @@ export const HandTex = () => {
   const details = {
     title: "HandTex",
     techStack: "react.js, python, tensorflow, openCV",
-    description: "a convolutional neural network to convert handwritten mathematical expressions to LaTeX",
+    description: "a convolutional neural network to convert handwritten mathematical expressions to LaTeX using AI image detection",
     github: "https://github.com/gulkaran/Handwritten-Math-To-Latex"
   }
 
@@ -28,7 +28,15 @@ export const HandTex = () => {
                 }}
                 whileTap={{scale: 1}} >
       <Container maxWidth="sm">
-        <Image className="centerImg" width={ 438 } height={ 329 } src={img} alt="Image" />
+      <div style={{borderRadius: '35px', overflow: 'hidden'}}>
+        <Image className="centerImg" 
+                     style={{
+                      width: '100%',
+                      height: 'auto',
+                    }}
+               src={img}
+               alt="Image" />
+      </div>
       </Container>
     </motion.div>
   );
