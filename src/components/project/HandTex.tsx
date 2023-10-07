@@ -16,7 +16,7 @@ export const HandTex = () => {
     description: "a convolutional neural network to convert handwritten mathematical expressions to LaTeX using AI image detection",
     github: "https://github.com/gulkaran/Handwritten-Math-To-Latex"
   }
-
+  
   const text = (
       <ProjectDetails text={details} />
   )
