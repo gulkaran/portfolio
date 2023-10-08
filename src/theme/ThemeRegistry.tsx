@@ -61,6 +61,17 @@ const themeOptions: ThemeOptions = {
         fontSize: '28pt'
       }
     },
+    h3: {
+      fontFamily: dM_Sans.style.fontFamily,
+      fontSize: '20pt',
+      fontWeight: 600,
+      [breakpoints.down("md")]: {
+        fontSize: '18pt'
+      },
+      [breakpoints.down("sm")]: {
+        fontSize: '16pt'
+      }
+    },
     h4: {
       fontFamily: dM_Sans.style.fontFamily,
       fontSize: '36pt',
@@ -72,7 +83,7 @@ const themeOptions: ThemeOptions = {
     h5: {
       fontFamily: dM_Sans.style.fontFamily,
       fontSize: '16pt',
-      fontWeight: 400,
+      fontWeight: 300,
       [breakpoints.down("md")]: {
         fontSize: '12pt'
       }
@@ -80,7 +91,7 @@ const themeOptions: ThemeOptions = {
     h6: {
       fontFamily: dM_Sans.style.fontFamily,
       fontSize: '14pt',
-      fontWeight: 400,
+      fontWeight: 300,
       [breakpoints.down("md")]: {
         fontSize: '12pt'
       }

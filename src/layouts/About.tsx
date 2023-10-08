@@ -3,7 +3,7 @@
 import { Title } from "@/components/container/Title";
 import { AboutDetails } from "@/components/about/AboutDetails";
 
-export default function Project() {
+export default function About() {
 
   const details = {
     title: "ABOUT",

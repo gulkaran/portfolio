@@ -1,7 +1,8 @@
 'use client';
 
-import { Toolbar, AppBar, IconButton, Stack, Button, Typography, useTheme, SvgIcon } from "@mui/material";
-import { motion } from "framer-motion";
+import { Toolbar, AppBar, Stack, Button, Typography, useTheme, useMediaQuery, SvgIcon } from "@mui/material";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useState } from "react";
 import { Link } from "react-scroll/modules";
 
 export const Navbar = () => {
@@ -30,6 +31,23 @@ export const Navbar = () => {
     }
   }
 
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const prev = scrollY.getPrevious();
+    if (latest > prev && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  })
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'), {
+    defaultMatches: true
+  });
+  const flexValue = isMobile ? 0.5 : 1.5;
 
   return (
     <motion.div initial={{ scale: 0 }}
@@ -40,23 +58,26 @@ export const Navbar = () => {
       damping: 30,
       delay: 0.6
     }}
-    variants={{
-      visible: { y : 0 },
-      hidden: { y: "-100%"},
-    }}
     >
-      <AppBar position="fixed" sx={{ bgcolor: '#09090b' }}>
+      <AppBar position="fixed" sx={{ bgcolor: '#09090b' }}
+              component={motion.div}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              animate={hidden ? "hidden" : "visible"}
+              variants={{
+                visible: { y : 0 },
+                hidden: { y: "-100%"},
+              }}>
         <Toolbar>
-          <IconButton size="large">
             <Link to="/" spy={true} smooth={true} offset={-100} duration={500}>
               <SvgIcon component={motion.div}
                         whileHover={{
                         scale: 1.1,
                         transition: { duration: 0.2 }
                         }}
-                        whileTap={{scale: 0.9}}>
-                <motion.svg initial="hidden" 
-                            animate="visible"
+                        whileTap={{scale: 0.9}}
+                        sx={{mt: 1.5}}>
+                <motion.svg initial="hidden"
+                            animate={isMobile ? "hidden" : "visible"}
                             viewBox="0 0 247 259" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <motion.path variants={draw} d="M123.5 83.5C113 66 84.0007 69.5 74.5004 83.5C65.0001 97.5 68.5003 114 74.5003 120.5C80.5003 127 81.9997 129.5 101.5 133.5C121 137.5 143 141.5 158 155.5C173 169.5 178.5 179 182.5 191C186.5 203 186.5 208.5 186.5 223" stroke="white" strokeWidth="25" strokeLinecap="round"/>
                   <motion.path variants={draw} d="M164 104H199M234 104H199M199 104C197.237 118.75 191.698 145.198 177.094 163" stroke="white" strokeWidth="25" strokeLinecap="round"/>
@@ -64,9 +85,8 @@ export const Navbar = () => {
                 </motion.svg>
               </SvgIcon>
             </Link>
-          </IconButton>
-          <Typography component="div" sx={{flexGrow: 1}}/>
-          <Stack direction="row" spacing={1.5}>
+          <Typography component="div" sx={{flexGrow: flexValue}}/>
+          <Stack direction="row" spacing={isMobile ? -0.5 : 1.5}>
             <Link to="/" spy={true} smooth={true} offset={-100} duration={500}>
               <Button variant="text" 
                       color="inherit"
@@ -111,7 +131,8 @@ export const Navbar = () => {
                       scale: 1.1,
                       transition: { duration: 0.2 }
                       }}
-                      whileTap={{scale: 0.9}}>notes</Button></Link>
+                      whileTap={{scale: 0.9}}
+                      sx={{mr: 0.5}}>notes</Button></Link>
 
               <Button variant="outlined" 
                       color="secondary"

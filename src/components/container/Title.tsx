@@ -38,7 +38,7 @@ export const Title: React.FC<TextProp> = ({ text }) => {
           <Typography variant="h1" component="h1" align="center" color={backgroundColor} className="outlined" sx={{mt: 10}}>{ text.title }</Typography>
           <Stack direction="column" spacing={0}>
             <Typography variant="h2" component="h2" align="center" color="secondary" sx={{mt: isMobile ? -6 : -12}}>{ text.subtitle }</Typography>
-            <Typography variant="h5" component="h5" align="center" color="primary" sx={{mb: 10}} >{ text.description }</Typography>
+            <Typography variant="h5" component="h5" align="center" color="primary" fontWeight={400} sx={{mb: 10}} >{ text.description }</Typography>
           </Stack>
         </Stack>
       </motion.div>

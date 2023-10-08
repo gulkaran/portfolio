@@ -1,0 +1,11 @@
+.overlayImg {
+  display: flex;
+  justify-content: 'center';
+  align-items: 'center';
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.overlay {
+  z-index: 1;
+}

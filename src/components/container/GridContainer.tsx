@@ -24,7 +24,7 @@ export const GridContainer: React.FC<{ rightComponent: ReactNode,
                     scale: scaleProgess,
                     opacity: opacityProgess }}>
         <Grid container 
-              spacing={0} // Adjust spacing for smaller screens
+              spacing={4} // Adjust spacing for smaller screens
               direction='row'
               justifyContent="center"
               alignItems="center"

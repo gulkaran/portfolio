@@ -1,7 +1,7 @@
 'use client';
 
 import { GridContainer } from '@/components/container/GridContainer';
-import { Container, Divider, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import img from '../../../public/images/me.png';
@@ -17,7 +17,7 @@ export const AboutDetails = () => {
         <Typography variant="h6" component="h6" align="left" sx={{mt: -2}}>
           <ul>
             <li>McMaster University - B.A.Sc in Computer Science & Minor in Business (3.9 GPA)</li>
-            <li>I write all my notes in LaTeX, check them out!</li>
+            <li>Checkout my notes, written in LaTeX!</li>
           </ul>
         </Typography>
         <Typography variant="h5" component="h5" fontWeight={700} align="left">

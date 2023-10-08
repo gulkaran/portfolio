@@ -3,6 +3,7 @@
 import Hero from "@/layouts/Hero";
 import About from "@/layouts/About";
 import Projects from "@/layouts/Project";
+import Notes from "@/layouts/Notes";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
+        <Notes />
     </>
   )
 }
