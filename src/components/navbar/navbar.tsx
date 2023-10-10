@@ -4,6 +4,7 @@ import { Toolbar, AppBar, Stack, Button, Typography, useTheme, useMediaQuery, Sv
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-scroll/modules";
+import {Link as MUILink} from "@mui/material";
 
 export const Navbar = () => {
 
@@ -134,6 +135,7 @@ export const Navbar = () => {
                       whileTap={{scale: 0.9}}
                       sx={{mr: 0.5}}>notes</Button></Link>
 
+              <MUILink href="/files/Gulkaran_Singh_Resume.pdf" underline="none" target="_blank" rel="noopener noreferrer">
               <Button variant="outlined" 
                       color="secondary"
                       onClick={download}
@@ -142,7 +144,7 @@ export const Navbar = () => {
                         scale: 1.15,
                         transition: { duration: 0.2 }
                       }}
-                      whileTap={{scale: 0.9}}>resume</Button>
+                      whileTap={{scale: 0.9}}>resume</Button></MUILink>
           </Stack>
         </Toolbar>
       </AppBar>

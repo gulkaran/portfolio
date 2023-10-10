@@ -13,3 +13,12 @@ a:visited {
   justify-content: 'center';
   align-items: 'center';
 }
+
+li.clickable {
+  cursor: pointer;
+  transition: color 0.3s; /* Add a smooth transition for color change */
+}
+
+li.clickable:hover {
+  color: #FFC700; /* Change the text color on hover */
+}

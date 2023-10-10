@@ -1,7 +1,9 @@
 'use client';
 
+import { Link } from '@mui/material';
 import { NotesCard } from './NotesCard';
 import image from "../../../public/images/dsa.png"
+
 
 export const DSA = () => {
 
@@ -11,8 +13,8 @@ export const DSA = () => {
   }
 
   return (
-    <a href="/files/dsa_notes.pdf" target="_blank" rel="noopener noreferrer">
+    <Link href="/files/dsa_notes.pdf" underline="none" target="_blank" rel="noopener noreferrer">
       <NotesCard text={details} />
-    </a>
+    </Link>
   )
 }

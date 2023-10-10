@@ -2,6 +2,7 @@
 
 import { Title } from "@/components/container/Title";
 import { AboutDetails } from "@/components/about/AboutDetails";
+import { Socials } from "@/components/socials/Socials";
 
 export default function About() {
 
@@ -16,6 +17,7 @@ export default function About() {
       <div id="about">
         <Title text={ details } />
         <AboutDetails />
+        <Socials />
       </div>
     </>
   )

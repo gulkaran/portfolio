@@ -5,6 +5,7 @@ import { Container, Typography } from '@mui/material';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import img from '../../../public/images/me.png';
+import { Link } from "react-scroll"
 import '@/styles/project.css'
 
 export const AboutDetails = () => {
@@ -17,7 +18,9 @@ export const AboutDetails = () => {
         <Typography variant="h6" component="h6" align="left" sx={{mt: -2}}>
           <ul>
             <li>McMaster University - B.A.Sc in Computer Science & Minor in Business (3.9 GPA)</li>
-            <li>Checkout my notes, written in LaTeX!</li>
+            <Link to="notes" spy={true} smooth={true} offset={0} duration={500}>
+              <li className="clickable">Checkout my notes, written in LaTeX!</li>
+            </Link>
           </ul>
         </Typography>
         <Typography variant="h5" component="h5" fontWeight={700} align="left">

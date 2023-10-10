@@ -1,5 +1,6 @@
 'use client';
 
+import { Link } from "@mui/material";
 import { NotesCard } from './NotesCard';
 import image from "../../../public/images/discrete.png"
 
@@ -11,8 +12,8 @@ export const Discrete = () => {
   }
 
   return (
-    <a href="/files/discrete_notes.pdf" target="_blank" rel="noopener noreferrer">
+    <Link href="/files/discrete_notes.pdf" underline="none" target="_blank" rel="noopener noreferrer">
       <NotesCard text={details} />
-    </a>
+    </Link>
   )
 }
