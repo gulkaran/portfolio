@@ -57,16 +57,16 @@ export const AboutDetails = () => {
                 }}
                 whileTap={{scale: 1}} >
       <Container maxWidth="sm" sx={{mb: 5}}>
-      <div style={{borderRadius: '100px', overflow: 'hidden'}}>
-        <Image className="centerImg" 
-                     style={{
-                      width: '100%',
-                      height: 'auto', 
-                    }}
-               objectFit='cover'
-               src={img}
-               alt="Image" />
-      </div>
+        <div style={{borderRadius: '100px', overflow: 'hidden'}}>
+          <Image className="centerImg" 
+                      style={{
+                        width: '100%',
+                        height: 'auto', 
+                      }}
+                objectFit='cover'
+                src={img}
+                alt="Image" />
+        </div>
       </Container>
     </motion.div>
   );

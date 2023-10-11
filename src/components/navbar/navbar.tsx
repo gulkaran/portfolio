@@ -4,7 +4,7 @@ import { Toolbar, AppBar, Stack, Button, Typography, useTheme, useMediaQuery, Sv
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-scroll/modules";
-import {Link as MUILink} from "@mui/material";
+import { Link as MUILink } from "@mui/material";
 
 export const Navbar = () => {
 

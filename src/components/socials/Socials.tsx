@@ -1,27 +1,21 @@
-import { useRef } from 'react';
 import { Typography, Stack, IconButton, Container, Link } from "@mui/material";
 import { MailOutline, LinkedIn, GitHub } from '@mui/icons-material';
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const Socials = () => {
-
-  const ref = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({ 
-    target: ref,
-    offset: ["0.5  1", "2 1"],
-  });
-
-  const scaleProgess = useTransform(scrollYProgress, [0.5, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
 
   return (
     <>
       <motion.div
-        ref={ref} 
-        style={{
-          scale: scaleProgess,
-          opacity: opacityProgess }}>
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 30,
+        delay: 0.6
+      }}
+        >
         <Typography variant="h5" component="h5" align="center" color="primary" fontWeight={700} sx={{mt: 5}} >Connect With Me!</Typography>
         <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
           <Stack direction="row" spacing={4} sx={{mt: 3}}>

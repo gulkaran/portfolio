@@ -3,8 +3,8 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-// import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+// import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
 
 export const LegoScene: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
