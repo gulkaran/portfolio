@@ -1,4 +1,5 @@
 'use client';
+require('dotenv').config();
 
 import Hero from "@/layouts/Hero";
 import About from "@/layouts/About";

@@ -1,12 +1,14 @@
 'use client';
 
 import { GridContainer } from '@/components/container/GridContainer';
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, SvgIcon } from '@mui/material';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import img from '../../../public/images/me.png';
 import { Link } from "react-scroll"
-import '@/styles/project.css'
+import SpotifyCurrentSong from '@/components/spotify/SpotifyCurrentSong';
+import { SpotifyLogo } from "@/components/spotify/spotifyLogo";
+import '@/styles/project.css';
 
 export const AboutDetails = () => {
 
@@ -40,13 +42,10 @@ export const AboutDetails = () => {
           </ul>
         </Typography>
         <Typography variant="h5" component="h5" fontWeight={700} align="left">
+          <SvgIcon sx={{mb : -0.5, mr: 1}}><SpotifyLogo /></SvgIcon>
           Currently Listening To
         </Typography>
-        <Typography variant="h6" component="h6" align="left"sx={{mt: -2}}>
-          <ul>
-            <li>Janurary 28th - J. Cole (via Spotify API)</li>
-          </ul>
-        </Typography>
+        <SpotifyCurrentSong />
       </>
   )
 
