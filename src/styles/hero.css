@@ -1,8 +1,8 @@
 body {
   overflow-x: hidden;
 }
-.pageText {   /* this element will not catch any events */
-  z-index: 1;    /* position this canvas at bottom of the other one */
+.pageText {  
+  z-index: 1;   
 }
 
 .threeContainer {
@@ -17,5 +17,12 @@ body {
   overflow: hidden;
   opacity: 1;
   z-index: -1;
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  transform: translate(0%, -10vh);
+  z-index: 1;
 }
 

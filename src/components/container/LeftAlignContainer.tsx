@@ -19,7 +19,7 @@ export const LeftAlignContainer: React.FC<{ component: ReactNode }> = ({ compone
                           type: "spring",
                           stiffness: 260,
                           damping: 30,
-                          delay: 0.6
+                          delay: 0.6,
                         }}>
               <Container sx={{ml: 5}}>
                 { component }
