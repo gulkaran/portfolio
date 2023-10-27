@@ -4,7 +4,7 @@ import { GridContainer } from '@/components/container/GridContainer';
 import { Container, Typography, SvgIcon } from '@mui/material';
 import { motion } from "framer-motion";
 import Image from 'next/image';
-import img from '../../../public/images/me.png';
+import img from '../../../public/images/me2.jpeg';
 import { Link } from "react-scroll"
 import SpotifyCurrentSong from '@/components/spotify/SpotifyCurrentSong';
 import { SpotifyLogo } from "@/components/spotify/spotifyLogo";

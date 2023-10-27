@@ -22,7 +22,13 @@ body {
 .centered {
   position: absolute;
   left: 50%;
-  transform: translate(0%, -10vh);
+  transform: translate(0%, -15vh);
   z-index: 1;
 }
 
+.centeredSmall {
+  position: absolute;
+  left: 50%;
+  transform: translate(0%, -25vh);
+  z-index: 1;
+}
