@@ -51,8 +51,6 @@ export default function SpotifyCurrentSong() {
             const songUrl = song.item.external_urls.spotify;
             const title = song.item.name;
 
-            console.log(song)
-
             setAlbum(albumImageUrl) 
             setArtist(artist)
             setIsPlaying(isPlaying)
@@ -82,7 +80,6 @@ export default function SpotifyCurrentSong() {
 
   useEffect(() => {
     fetchSpotifySong();
-    console.log("ran useeffect")
   }, [])
 
   return (
