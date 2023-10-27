@@ -32,8 +32,8 @@ const themeOptions: ThemeOptions = {
       main: '#FFC700',
     },
     background: {
-      default: '#151515',
-      paper: '#151515',
+      default: '#111010',
+      paper: '#111010',
     },
     text: {
       secondary: '#8D8D8D',

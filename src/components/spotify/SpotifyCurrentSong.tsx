@@ -2,6 +2,7 @@ import { Typography, Stack, IconButton, Container, Link, SvgIcon } from "@mui/ma
 import Image from 'next/image';
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import PlayingAnimation from "@/components/spotify/PlayingAnimation";
 import '@/styles/project.css';
 
 export default function SpotifyCurrentSong() {
@@ -44,7 +45,7 @@ export default function SpotifyCurrentSong() {
         fetch(NOW_PLAYING_ENDPOINT, nowPlayingOptions)
           .then(response => response.json())
           .then(song => {
-            const albumImageUrl = song.item.album.images[0].url;
+            const albumImageUrl = song.item.album.images[2].url;
             const artist = song.item.artists.map((_artist: any) => _artist.name).join(", ");
             const isPlaying = song.is_playing;
             const songUrl = song.item.external_urls.spotify;
@@ -81,16 +82,8 @@ export default function SpotifyCurrentSong() {
 
   useEffect(() => {
     fetchSpotifySong();
-
-    const fetchInterval = setInterval(() => {
-      fetchSpotifySong();
-    }, 24 * 60 * 60 * 1000)
-
-    return () => {
-      clearInterval(fetchInterval)
-    }
+    console.log("ran useeffect")
   }, [])
-
 
   return (
     <>
@@ -104,19 +97,20 @@ export default function SpotifyCurrentSong() {
         delay: 0.6
       }}
         >
-        {isPlaying ? (
-        <div>
-        <Typography variant="h6" component="h6" align="left" sx={{ml : 4.2}}>
-          <Link href={songURL} target="_blank" rel="noopener noreferrer" underline="none" className="clickable">{title}</Link> - {artist}
-        </Typography>
-        </div>
-      ) : (
         <>
-        <Typography variant="h6" component="h6" align="left" sx={{ml : 4.2}}>
-          <Link href={songURL} target="_blank" rel="noopener noreferrer" underline="none" className="clickable">{title}</Link> - {artist}
-        </Typography>
+        <Stack direction="row" spacing={2}>
+        <img src={album} width={48} height={48} />
+          <Stack direction="column">
+          <Typography variant="h6" component="h6" align="left">
+            <Link href={songURL} target="_blank" rel="noopener noreferrer" underline="none" className="clickable">{title}</Link>
+          </Typography>
+          <Typography variant="h6" component="h6" align="left" color="textSecondary" sx={{mt: -0.5}}>
+            {artist}
+          </Typography>
+          </Stack>
+          <PlayingAnimation />
+        </Stack>
         </>
-      )}
       </motion.div>
     </>
   )

@@ -41,7 +41,7 @@ export const AboutDetails = () => {
             <li>Python, Javascript/Typescript (React JS), Java, C, C# (.NET), SQL, Firebase, Tensorflow, AutoCAD, LaTeX, & more!</li>
           </ul>
         </Typography>
-        <Typography variant="h5" component="h5" fontWeight={700} align="left">
+        <Typography variant="h5" component="h5" fontWeight={700} align="left" sx={{pb: 2}}>
           <SvgIcon sx={{mb : -0.5, mr: 1}}><SpotifyLogo /></SvgIcon>
           Currently Listening To
         </Typography>

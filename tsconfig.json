@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/spotify/SpotifyAPI.js", "src/components/spotify/spotifyAPI.js", "src/components/spotify/SpotifyCurrentSong.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/spotify/PlayingAnimation.js", "src/components/spotify/PlayingAnimation.js", "src/components/spotify/SpotifyCurrentSong.tsx", "src/components/spotify/spotifyLogo.js"],
   "exclude": ["node_modules"]
 }
