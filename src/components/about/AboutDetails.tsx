@@ -30,6 +30,7 @@ export const AboutDetails = () => {
         </Typography>
         <Typography variant="h6" component="h6" align="left"sx={{mt: -2}}>
           <ul>
+            <li>Trades Floor Technology Consultant (Full Stack Developer) @ <strong>Scotiabank</strong> (4 months)</li>
             <li>Software Developer Intern @ Canada’s Wonderland (4 months)</li>
           </ul>
         </Typography>
