@@ -3,16 +3,16 @@
 import { ProjectDetails } from '@/components/project/ProjectDetails';
 import { GridContainer } from '@/components/container/GridContainer';
 import { ResponsiveImage } from '../container/ResponsiveImage';
-import img from '../../../public/images/bytekode.png';
+import img from '../../../public/images/spiderman.png';
 
-export const ByteKode = () => {
+export const Spiderman = () => {
   const details = {
-    title: 'byteKode Hackathon',
-    techStack: 'devpost, javascript, html5, css3',
+    title: 'Spiderman Minecraft Mod',
+    techStack: 'Java, Fabric, Gradle',
     description:
-      'a non-profit organization which hosted two hackathon events with 200+ beginner programmers attendees looking to broaden their utilization of code.',
-    link: 'https://bytekodehackathon.devpost.com',
-    buttonText: 'Devpost',
+      'a custom Minecraft mod that implements new loot tables, spiderman armour, new blocks, and more!',
+    link: 'https://github.com/gulkaran/Spiderman-Minecraft-Mod',
+    buttonText: 'GitHub',
   };
 
   return (

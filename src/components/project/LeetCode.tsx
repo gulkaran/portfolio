@@ -3,16 +3,16 @@
 import { ProjectDetails } from '@/components/project/ProjectDetails';
 import { GridContainer } from '@/components/container/GridContainer';
 import { ResponsiveImage } from '../container/ResponsiveImage';
-import img from '../../../public/images/bytekode.png';
+import img from '../../../public/images/leetcode.png';
 
-export const ByteKode = () => {
+export const LeetCode = () => {
   const details = {
-    title: 'byteKode Hackathon',
-    techStack: 'devpost, javascript, html5, css3',
+    title: 'Markdown Documentation',
+    techStack: 'AWS (S3, DynamoDB, Lambda), Next 13',
     description:
-      'a non-profit organization which hosted two hackathon events with 200+ beginner programmers attendees looking to broaden their utilization of code.',
-    link: 'https://bytekodehackathon.devpost.com',
-    buttonText: 'Devpost',
+      'a markdown powered documentation style website to showcase completed LeetCode problems.',
+    link: 'https://gulkaran.ca/leetcode',
+    buttonText: 'View Demo',
   };
 
   return (

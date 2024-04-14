@@ -1,9 +1,9 @@
-a:visited { 
-  text-decoration: none; 
- }
+a:visited {
+  text-decoration: none;
+}
 
 .outlined {
-  -webkit-text-stroke: 1px #FFFFFF;
+  -webkit-text-stroke: 1px #ffffff;
   opacity: 0.3;
   z-index: -1;
 }
@@ -20,5 +20,5 @@ a:visited {
 }
 
 .clickable:hover {
-  color: #FFC700; /* Change the text color on hover */
+  color: #ffc700; /* Change the text color on hover */
 }

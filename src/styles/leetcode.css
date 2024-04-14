@@ -1,0 +1,12 @@
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  color: #ffc700;
+}
+
+.selected {
+  background-color: #242323 !important;
+  color: #ffc700;
+}
