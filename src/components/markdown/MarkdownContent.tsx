@@ -9,7 +9,7 @@ import 'katex/dist/katex.min.css';
 
 interface CodeBlockProps {
   className?: string;
-  children?: React.ReactNode;
+  children: string | string[];
 }
 
 export const MarkdownContent = ({ id }: any) => {
@@ -53,9 +53,8 @@ export const MarkdownContent = ({ id }: any) => {
             color: 'white',
           },
         }}
-      >
-        {children}
-      </SyntaxHighlighter>
+        children={children}
+      />
     );
   };
 
