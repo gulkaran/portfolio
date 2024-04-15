@@ -12,7 +12,7 @@ import '@/styles/leetcode.css';
 
 export const Sidebar = () => {
   const [open, setOpen] = useState({});
-  const [leetCodeData, setLeetCodeData] = useState(null);
+  const [leetCodeData, setLeetCodeData] = useState<any[]>([]);
   const [selectedIndex, setSelectedIndex] = useState([0, 0]);
 
   const handleListItemClick = (
@@ -30,7 +30,7 @@ export const Sidebar = () => {
     Hard: 'red',
   };
 
-  const apiKey = process.env.NEXT_PUBLIC_AWS_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_AWS_API_KEY!;
   useEffect(() => {
     fetch(
       'https://iucujk439g.execute-api.us-east-1.amazonaws.com/default/readTable?TableName=Leetcode',
@@ -45,9 +45,9 @@ export const Sidebar = () => {
       .then((data) => {
         setLeetCodeData(data);
 
-        const initialOpenState = {};
+        const initialOpenState: Record<number, boolean> = {};
         Object.keys(data).forEach((pattern, index) => {
-          initialOpenState[index] = true;
+          initialOpenState[index as keyof object] = true;
         });
         setOpen(initialOpenState);
       });
@@ -56,7 +56,7 @@ export const Sidebar = () => {
   const toggleOpen = (patternIndex: number) => {
     setOpen((prevOpen) => ({
       ...prevOpen,
-      [patternIndex]: !prevOpen[patternIndex],
+      [patternIndex]: !prevOpen[patternIndex as keyof object],
     }));
   };
 
@@ -72,7 +72,7 @@ export const Sidebar = () => {
                   key={`list-btn-${pattern}`}
                   onClick={() => toggleOpen(patternIndex)}
                 >
-                  {open[patternIndex] ? (
+                  {open[patternIndex as keyof object] ? (
                     <ExpandMore
                       key={`icon-less-${pattern}`}
                       fontSize='small'
@@ -92,7 +92,7 @@ export const Sidebar = () => {
                 </ListItemButton>
                 <Collapse
                   key={`list-pattern-${pattern}`}
-                  in={open[patternIndex]}
+                  in={open[patternIndex as keyof object]}
                   timeout='auto'
                   unmountOnExit
                 >
@@ -129,7 +129,7 @@ export const Sidebar = () => {
                                     selectedIndex[1] == difficultyIndex &&
                                     selectedIndex[2] == problemIndex
                                   }
-                                  onClick={(e) =>
+                                  onClick={(e: any) =>
                                     handleListItemClick(
                                       e,
                                       patternIndex,
@@ -143,7 +143,11 @@ export const Sidebar = () => {
                                   }}
                                 >
                                   <Circle
-                                    sx={{ color: colorMap[difficulty], pr: 1 }}
+                                    sx={{
+                                      color:
+                                        colorMap[difficulty as keyof object],
+                                      pr: 1,
+                                    }}
                                     key={`list-icon-${pattern}-${id}`}
                                   />
                                   <ListItemText

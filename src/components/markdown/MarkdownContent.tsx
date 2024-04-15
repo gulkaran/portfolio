@@ -53,8 +53,9 @@ export const MarkdownContent = ({ id }: any) => {
             color: 'white',
           },
         }}
-        children={children}
-      />
+      >
+        {children}
+      </SyntaxHighlighter>
     );
   };
 
@@ -88,7 +89,6 @@ export const MarkdownContent = ({ id }: any) => {
                 src='https://upload.wikimedia.org/wikipedia/commons/8/8e/LeetCode_Logo_1.png'
                 alt='LeetCode'
                 height={20}
-                sx={{ mr: 0 }}
               />
             }
           >
