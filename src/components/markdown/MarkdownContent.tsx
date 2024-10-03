@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useQuery } from 'react-query';
 import Markdown, { RuleType } from 'markdown-to-jsx';
 import TeX from '@matejmazur/react-katex';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -13,27 +14,35 @@ interface CodeBlockProps {
 }
 
 export const MarkdownContent = ({ id }: any) => {
-  const [content, setContent] = useState('');
+  const fetchMarkdownContent = async (id: string) => {
+    const res = await fetch(
+      `https://gulkaran-portfolio.s3.amazonaws.com/leetcode/${id}.md`
+    );
+    const data = await res.text();
+    let mathRegex = /(\$[^$]+\$)/g;
+    let editedData = data
+      .split(mathRegex)
+      .map((part, index) => {
+        if (part.match(mathRegex)) {
+          return '<inlineMath>' + part.slice(1, -1) + '</inlineMath>';
+        } else {
+          return part;
+        }
+      })
+      .join('');
 
-  useEffect(() => {
-    fetch(`https://gulkaran-portfolio.s3.amazonaws.com/leetcode/${id}.md`)
-      .then((res) => res.text())
-      .then((data) => {
-        let mathRegex = /(\$[^$]+\$)/g;
-        let editedData = data
-          .split(mathRegex)
-          .map((part, index) => {
-            if (part.match(mathRegex)) {
-              return '<inlineMath>' + part.slice(1, -1) + '</inlineMath>';
-            } else {
-              return part;
-            }
-          })
-          .join('');
+    return editedData;
+  };
 
-        setContent(editedData);
-      });
-  }, []);
+  const {
+    data: content,
+    isLoading,
+    error,
+  } = useQuery(['markdownContent', id], () => fetchMarkdownContent(id), {
+    staleTime: 1000 * 60 * 5, // 5 minutes
+    cacheTime: 1000 * 60 * 30, // 30 minutes
+    retry: 1,
+  });
 
   const codeBlock = ({ className, children }: CodeBlockProps) => {
     let lang = 'text'; // default monospaced text
@@ -114,7 +123,7 @@ export const MarkdownContent = ({ id }: any) => {
           },
         }}
       >
-        {content}
+        {content ?? ''}
       </Markdown>
     </>
   );
