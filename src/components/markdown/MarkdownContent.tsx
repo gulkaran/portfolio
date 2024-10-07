@@ -5,7 +5,7 @@ import Markdown from 'markdown-to-jsx';
 import TeX from '@matejmazur/react-katex';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Button, Link } from '@mui/material';
+import { Button, Link, Grid, CircularProgress } from '@mui/material';
 import { motion } from 'framer-motion';
 import 'katex/dist/katex.min.css';
 
@@ -44,6 +44,27 @@ export const MarkdownContent = ({ id }: any) => {
     cacheTime: 1000 * 60 * 30, // 30 minutes
     retry: 1,
   });
+
+  if (isLoading) {
+    return (
+      <Grid
+        container
+        spacing={0}
+        direction='column'
+        alignItems='center'
+        justifyContent='center'
+        sx={{ minHeight: '100vh' }}
+      >
+        <Grid item xs={3}>
+          <CircularProgress color='inherit' />
+        </Grid>
+      </Grid>
+    );
+  }
+  if (error) {
+    console.error(error);
+    return <p>Error fetching content.</p>;
+  }
 
   const codeBlock = ({ className, children }: CodeBlockProps) => {
     let lang = 'text'; // default monospaced text
