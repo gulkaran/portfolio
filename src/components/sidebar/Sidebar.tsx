@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState, MouseEvent } from 'react';
 import {
   List,
@@ -5,6 +7,7 @@ import {
   ListItemText,
   ListSubheader,
   Collapse,
+  Typography,
 } from '@mui/material';
 import { ExpandMore, NavigateNext, Circle } from '@mui/icons-material';
 import Link from 'next/link';
@@ -47,7 +50,7 @@ export const Sidebar = () => {
 
         const initialOpenState: Record<number, boolean> = {};
         Object.keys(data).forEach((pattern, index) => {
-          initialOpenState[index as keyof object] = true;
+          initialOpenState[index as keyof object] = false;
         });
         setOpen(initialOpenState);
       });
@@ -62,6 +65,12 @@ export const Sidebar = () => {
 
   return (
     <>
+      <Typography
+        variant='h6'
+        sx={{ px: 2.5, pt: 3.5, pb: 1, fontWeight: 'medium' }}
+      >
+        Leetcode Patterns 🧩
+      </Typography>
       {leetCodeData ? (
         <List sx={{ px: 1 }}>
           {Object.keys(leetCodeData).map((pattern: any, patternIndex: any) => {

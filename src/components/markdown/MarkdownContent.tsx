@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+'use client';
+
 import { useQuery } from 'react-query';
-import Markdown, { RuleType } from 'markdown-to-jsx';
+import Markdown from 'markdown-to-jsx';
 import TeX from '@matejmazur/react-katex';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
