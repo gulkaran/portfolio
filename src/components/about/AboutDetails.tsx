@@ -1,45 +1,44 @@
-'use client';
+"use client";
 
-import { GridContainer } from '@/components/container/GridContainer';
-import { Container, Typography, SvgIcon } from '@mui/material';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import img from '../../../public/images/me2.jpeg';
-import { Link } from 'react-scroll';
-import SpotifyCurrentSong from '@/components/spotify/SpotifyCurrentSong';
-import { SpotifyLogo } from '@/components/spotify/spotifyLogo';
-import '@/styles/project.css';
+import { GridContainer } from "@/components/container/GridContainer";
+import { Container, Typography, SvgIcon } from "@mui/material";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import img from "../../../public/images/me2.jpeg";
+import { Link } from "react-scroll";
+import SpotifyCurrentSong from "@/components/spotify/SpotifyCurrentSong";
+import { SpotifyLogo } from "@/components/spotify/spotifyLogo";
+import "@/styles/project.css";
 
 export const AboutDetails = () => {
   const text = (
     <>
-      <Typography variant='h5' component='h5' fontWeight={700} align='left'>
+      <Typography variant="h5" component="h5" fontWeight={700} align="left">
         School
       </Typography>
-      <Typography variant='h6' component='h6' align='left' sx={{ mt: -2 }}>
+      <Typography variant="h6" component="h6" align="left" sx={{ mt: -2 }}>
         <ul>
-          <li>
-            McMaster University - B.A.Sc in Computer Science & Minor in Business
-            (3.93 GPA)
-          </li>
-          <Link to='notes' spy={true} smooth={true} offset={0} duration={500}>
-            <li className='clickable'>Checkout my notes, written in LaTeX!</li>
+          <li>McMaster University - Computer Science & Business (3.95 GPA)</li>
+          <Link to="notes" spy={true} smooth={true} offset={0} duration={500}>
+            <li className="clickable">
+              Checkout my CS notes, written in LaTeX!
+            </li>
           </Link>
         </ul>
       </Typography>
-      <Typography variant='h5' component='h5' fontWeight={700} align='left'>
+      <Typography variant="h5" component="h5" fontWeight={700} align="left">
         Work Experience
       </Typography>
-      <Typography variant='h6' component='h6' align='left' sx={{ mt: -2 }}>
+      <Typography variant="h6" component="h6" align="left" sx={{ mt: -2 }}>
         <ul>
           <li>Trades Floor Full Stack Developer @ Scotiabank (4 months)</li>
           <li>Software Developer Intern @ Canada’s Wonderland (4 months)</li>
         </ul>
       </Typography>
-      <Typography variant='h5' component='h5' fontWeight={700} align='left'>
+      <Typography variant="h5" component="h5" fontWeight={700} align="left">
         Langauges/Technologies
       </Typography>
-      <Typography variant='h6' component='h6' align='left' sx={{ mt: -2 }}>
+      <Typography variant="h6" component="h6" align="left" sx={{ mt: -2 }}>
         <ul>
           <li>
             Python, Javascript/Typescript (React JS), C# (.NET), SQL, AWS, C
@@ -48,10 +47,10 @@ export const AboutDetails = () => {
         </ul>
       </Typography>
       <Typography
-        variant='h5'
-        component='h5'
+        variant="h5"
+        component="h5"
         fontWeight={700}
-        align='left'
+        align="left"
         sx={{ pb: 2 }}
       >
         <SvgIcon sx={{ mb: -0.5, mr: 1 }}>
@@ -71,17 +70,17 @@ export const AboutDetails = () => {
       }}
       whileTap={{ scale: 1 }}
     >
-      <Container maxWidth='sm' sx={{ mb: 5 }}>
-        <div style={{ borderRadius: '100px', overflow: 'hidden' }}>
+      <Container maxWidth="sm" sx={{ mb: 5 }}>
+        <div style={{ borderRadius: "100px", overflow: "hidden" }}>
           <Image
-            className='centerImg'
+            className="centerImg"
             style={{
-              width: '100%',
-              height: 'auto',
+              width: "100%",
+              height: "auto",
             }}
-            objectFit='cover'
+            objectFit="cover"
             src={img}
-            alt='Image'
+            alt="Image"
           />
         </div>
       </Container>
