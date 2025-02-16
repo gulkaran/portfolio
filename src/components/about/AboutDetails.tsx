@@ -14,11 +14,11 @@ export const AboutDetails = () => {
   const text = (
     <>
       <Typography variant="h5" component="h5" fontWeight={700} align="left">
-        School
+        Education
       </Typography>
       <Typography variant="h6" component="h6" align="left" sx={{ mt: -2 }}>
         <ul>
-          <li>McMaster University - Computer Science & Business (3.95 GPA)</li>
+          <li>CS @ McMaster University (3.95 GPA)</li>
           <Link to="notes" spy={true} smooth={true} offset={0} duration={500}>
             <li className="clickable">
               Checkout my CS notes, written in LaTeX!
@@ -31,8 +31,8 @@ export const AboutDetails = () => {
       </Typography>
       <Typography variant="h6" component="h6" align="left" sx={{ mt: -2 }}>
         <ul>
-          <li>Trades Floor Full Stack Developer @ Scotiabank (4 months)</li>
-          <li>Software Developer Intern @ Canada’s Wonderland (4 months)</li>
+          <li>Full Stack Developer @ Scotiabank</li>
+          <li>Software Developer @ Canada’s Wonderland</li>
         </ul>
       </Typography>
       <Typography variant="h5" component="h5" fontWeight={700} align="left">
@@ -56,7 +56,7 @@ export const AboutDetails = () => {
         <SvgIcon sx={{ mb: -0.5, mr: 1 }}>
           <SpotifyLogo />
         </SvgIcon>
-        Currently Listening To
+        Listening To
       </Typography>
       <SpotifyCurrentSong />
     </>

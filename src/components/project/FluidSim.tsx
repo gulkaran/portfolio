@@ -3,7 +3,7 @@
 import { ProjectDetails } from "@/components/project/ProjectDetails";
 import { GridContainer } from "@/components/container/GridContainer";
 import { ResponsiveImage } from "../container/ResponsiveImage";
-import img from "../../../public/images/fluidsim.gif";
+import img from "../../../public/images/fluidsim.png";
 
 export const FluidSim = () => {
   const details = {
